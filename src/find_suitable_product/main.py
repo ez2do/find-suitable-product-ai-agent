@@ -17,8 +17,8 @@ def run():
     """
     inputs = {
         'product': 'Màn hình',
-        'requirement': 'Tôi muốn mua 1 màn hình 24 inch 1k hoặc 2k, phục vụ cho công việc lập trình, ngân sách khoảng 3 triệu, ưu tiên màn bảo vệ mắt. Có loa và có cổng usb type c thì càng tốt nhưng không bắt buộc.',
-        'location': 'Vietnam'
+        'requirement': 'Tôi muốn mua 1 màn hình 24 inch 1k hoặc 2k, phục vụ cho công việc lập trình, ngân sách khoảng dưới 3 triệu vnd, ưu tiên màn bảo vệ mắt. Có loa hoặc cổng usb type c thì càng tốt nhưng không bắt buộc.',
+        'location': 'Việt Nam'
     }
     FindSuitableProduct().crew().kickoff(inputs=inputs)
 

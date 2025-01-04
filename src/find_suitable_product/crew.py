@@ -30,8 +30,6 @@ class ProductCandidate(BaseModel):
     promotions: List[str] = Field([], description="Các ưu đãi (nếu có)")
     reviews: List[Dict[str, str]] = Field([], description="Danh sách đánh giá")
     availability: str = Field(..., description="Độ khả dụng")
-    shipping_time: str = Field(..., description="Thời gian giao hàng")
-
 
 class ProductComparison(BaseModel):
     feature_comparisons: List[Dict[str, str]] = Field(..., description="So sánh các tính năng")
@@ -103,7 +101,8 @@ class FindSuitableProduct():
     def evaluate_task(self) -> Task:
         return Task(
             config=self.tasks_config['evaluate_task'],
-            output_json=ProductComparisonList
+            output_json=ProductComparisonList,
+			output_file='comparison.md'
         )
 
     @task
