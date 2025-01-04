@@ -1,0 +1,47 @@
+analyze_requirement_task:
+  description: >
+    Thu thập thông tin yêu cầu của người dùng về  {product}
+    Yêu cầu:
+      {requirement}
+    Thu thập:
+      Mục đích sử dụng: Công việc, giải trí, chơi game, công nghiệp, v.v.
+      Ngân sách: Khoảng giá mà người dùng muốn chi tiêu.
+      Tính năng mong muốn: Ví dụ, với laptop, đó có thể là RAM, dung lượng lưu trữ, trọng lượng; với máy giặt, đó có thể là dung tích và loại cửa.
+      Ưu tiên cá nhân: Ví dụ, thương hiệu ưa thích hoặc yêu cầu về bảo hành.
+  expected_output: >
+    Tài liệu yêu cầu có cấu trúc (dạng JSON hoặc bảng).
+  agent: requirements_analyst
+
+collect_candidate_task:
+  description: >
+    Sử dụng các yêu cầu đã xác minh để tìm kiếm {product} từ các nguồn đáng tin cậy trên mạng ở {location}. Thu thập dữ liệu như:
+      Tên sản phẩm.
+      Thông số kỹ thuật chi tiết.
+      Giá cả và các ưu đãi (nếu có).
+      Đánh giá từ người dùng và chuyên gia.
+      Độ khả dụng và thời gian giao hàng.
+  expected_output: >
+    Danh sách thô các sản phẩm kèm thông số kỹ thuật, giá cả, và nguồn tham khảo.
+  agent: evaluation_analyst
+
+evaluate_task:
+  description: >
+    Lọc danh sách các sản phẩm dựa trên tiêu chí cốt lõi (như ngân sách và tính năng bắt buộc). Sau đó, so sánh:
+      Tính năng nổi bật.
+      Giá trị trên chi phí (value for money).
+      Hiệu suất dự kiến (dựa trên thông số kỹ thuật).
+      Lập bảng so sánh và đánh giá ưu, nhược điểm của từng sản phẩm.
+  expected_output: >
+    Danh sách xếp hạng các sản phẩm dựa trên tiêu chí hiệu quả chi phí và sự phù hợp.
+  agent: evaluation_analyst
+
+suggest_task:
+  description: >
+      Kết hợp tất cả dữ liệu từ các nhiệm vụ trước để tạo danh sách cuối cùng. Danh sách sẽ:
+        Bao gồm 10 sản phẩm hàng đầu, sắp xếp theo thứ tự ưu tiên.
+        Khoảng giá
+        Chấm điểm
+        Đi kèm lý do chọn mỗi sản phẩm (ví dụ: "Sản phẩm A phù hợp vì giá thấp nhất, có tất cả tính năng cần thiết, và thương hiệu uy tín").
+  expected_output: >
+    Danh sách cuối cùng kèm giải thích rõ ràng.
+  agent: suggestion_expert

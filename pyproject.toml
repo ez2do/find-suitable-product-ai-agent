@@ -1,0 +1,20 @@
+[project]
+name = "find_suitable_product"
+version = "0.1.0"
+description = "find-suitable-product using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<=3.13"
+dependencies = [
+    "crewai[tools]>=0.86.0,<1.0.0"
+]
+
+[project.scripts]
+find_suitable_product = "find_suitable_product.main:run"
+run_crew = "find_suitable_product.main:run"
+train = "find_suitable_product.main:train"
+replay = "find_suitable_product.main:replay"
+test = "find_suitable_product.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
